@@ -26,3 +26,16 @@ def preprocess(df):
     df[numeric_cols] = scaler.fit_transform(df[numeric_cols])
 
     return df
+
+
+def preprocess_single_row(row):
+    # Assumes row is a Series; convert to DataFrame with one row
+    df = pd.DataFrame([row])
+    
+    # Apply whatever transformations you used in preprocess()
+    # e.g. scaling, encoding
+    df = df.drop(['Label'], axis=1, errors='ignore')
+    
+    # Make sure to match the training format!
+    return df
+
