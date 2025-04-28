@@ -8,7 +8,7 @@ from src.data_processing import preprocess
 model = load_model("outputs/models/best_model.h5")
 
 # Load data
-df = pd.read_csv("data/CICIDS2017_improved/full_dataset.csv")
+df = pd.read_csv("notebooks/data/CICIDS2017_improved/full_dataset.csv")
 df = preprocess(df)
 
 X = df.drop('Label', axis=1)
