@@ -2,6 +2,11 @@ import pandas as pd
 from sklearn.preprocessing import LabelEncoder, MinMaxScaler
 
 def preprocess(df):
+   # expected_columns = [...]  # fill this with your model's input features
+   # for col in expected_columns:
+   #     if col not in df.columns:
+   #         df[col] = 0  # Or some default/fallback value
+
     df = df.copy()
     
     df.replace([float('inf'), -float('inf')], pd.NA, inplace=True)
